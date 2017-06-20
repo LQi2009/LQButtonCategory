@@ -12,24 +12,24 @@
 
 - (void)setbuttonType:(LZCategoryType)type {
     
-    //需要在外部修改标题背景色的时候将此代码注释
-//    self.titleLabel.backgroundColor = self.backgroundColor;
-//    self.imageView.backgroundColor = self.backgroundColor;
     [self layoutIfNeeded];
     
-    CGSize titleSize = self.titleLabel.bounds.size;
-    CGSize imageSize = self.imageView.bounds.size;
-    CGFloat interval = 1.0;
+    CGRect titleFrame = self.titleLabel.frame;
+    CGRect imageFrame = self.imageView.frame;
+    
+    CGFloat space = titleFrame.origin.x - imageFrame.origin.x - imageFrame.size.width;
     
     if (type == LZCategoryTypeLeft) {
 
-        [self setImageEdgeInsets:UIEdgeInsetsMake(0,titleSize.width + interval, 0, -(titleSize.width + interval))];
-        [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -(imageSize.width + interval), 0, imageSize.width + interval)];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(0,titleFrame.size.width + space, 0, -(titleFrame.size.width + space))];
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -(titleFrame.origin.x - imageFrame.origin.x), 0, titleFrame.origin.x - imageFrame.origin.x)];
 
     } else if(type == LZCategoryTypeBottom) {
         
-        [self setImageEdgeInsets:UIEdgeInsetsMake(0,0, titleSize.height + interval, -(titleSize.width))];
-        [self setTitleEdgeInsets:UIEdgeInsetsMake(imageSize.height + interval, -(imageSize.width), 0, 0)];
+        
+        [self setImageEdgeInsets:UIEdgeInsetsMake(0,0, titleFrame.size.height + space, -(titleFrame.size.width))];
+        
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(imageFrame.size.height + space, -(imageFrame.size.width), 0, 0)];
     }
 }
 @end
