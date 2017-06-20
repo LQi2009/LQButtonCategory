@@ -14,5 +14,5 @@ typedef NS_ENUM(NSInteger,LZCategoryType) {
 };
 @interface UIButton (LZCategory)
 
-- (void)LZSetbuttonType:(LZCategoryType)lzType;
+- (void)setbuttonType:(LZCategoryType)type;
 @end

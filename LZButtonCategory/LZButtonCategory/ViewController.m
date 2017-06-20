@@ -24,7 +24,7 @@
     [button1 setTitle:@"标题在左" forState:UIControlStateNormal];
     [button1 setImage:[UIImage imageNamed:@"check_icon"] forState:UIControlStateNormal];
     [self.view addSubview:button1];
-    [button1 LZSetbuttonType:LZCategoryTypeLeft];
+    [button1 setbuttonType:LZCategoryTypeLeft];
 
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -33,7 +33,7 @@
     [button setTitle:@"标题在下" forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"AppIcon60x60"] forState:UIControlStateNormal];
     [self.view addSubview:button];
-    [button LZSetbuttonType:LZCategoryTypeBottom];
+    [button setbuttonType:LZCategoryTypeBottom];
 }
 
 - (void)didReceiveMemoryWarning {
