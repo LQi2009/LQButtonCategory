@@ -18,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button0 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button0.backgroundColor = [UIColor redColor];
+    button0.frame = CGRectMake(140, 190, 100, 30);
+    [button0 setTitle:@"系统默认" forState:UIControlStateNormal];
+    [button0 setImage:[UIImage imageNamed:@"check_icon"] forState:UIControlStateNormal];
+    [self.view addSubview:button0];
+    
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor redColor];
     button1.frame = CGRectMake(40, 90, 100, 30);
